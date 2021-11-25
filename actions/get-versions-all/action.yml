@@ -14,6 +14,9 @@ outputs:
   photon-versions:
     description: "Photon Versions"
     value: ${{steps.photon.outputs.versions}}
+  ubuntu-versions:
+    description: "Ubuntu Versions"
+    value: ${{steps.ubuntu.outputs.versions}}
 
 runs:
   using: "composite"
@@ -38,3 +41,8 @@ runs:
       uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
       with:
         os: 'photon'
+    - name: Get ubuntu versions
+      id: ubuntu
+      uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
+      with:
+        os: 'ubuntu'
