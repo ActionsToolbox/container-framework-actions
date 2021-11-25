@@ -18,9 +18,8 @@ runs:
       id: get-versions
       run: |
         if [ -z "${{ inputs.os }}" ]; then
-          dir_path="Dockerfiles/${{ inputs.os }}/*/"
+          echo "::set-output name=versions::$(ls -d Dockerfiles/${{ inputs.os }}/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
         else
-          dir_path="Dockerfiles/*/"
+          echo "::set-output name=versions::$(ls -d Dockerfiles/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
         fi
-        echo "::set-output name=versions::$(ls -d ${dir_path} | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
       shell: bash
