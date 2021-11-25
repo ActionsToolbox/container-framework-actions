@@ -4,7 +4,8 @@ description: 'Get Versions'
 inputs:
   os:
     description: “The os name”
-    required: false
+#    required: false
+    required: true
 
 outputs:
   versions:
@@ -16,10 +17,5 @@ runs:
   steps:
     - name: Get ${{ inputs.os }} versions
       id: get-versions
-      run: |
-        if [ -z "${{ inputs.os }}" ]; then
-          echo "::set-output name=versions::$(ls -d Dockerfiles/${{ inputs.os }}/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
-        else
-          echo "::set-output name=versions::$(ls -d Dockerfiles/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
-        fi
+      run: echo "::set-output name=versions::$(ls -d Dockerfiles/${{ inputs.os }}/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
       shell: bash
