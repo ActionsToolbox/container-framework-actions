@@ -17,16 +17,16 @@ runs:
   steps:
     - name: Get alpine versions
       id: alpine
-      users: actionstoolbox/container-framework-actions/composites/get-versions@master
+      users: actionstoolbox/container-framework-actions/composites/get-versions
       with:
         os: 'alpine'
     - name: Get centos versions
       id: centos
-      users: actionstoolbox/container-framework-actions/composites/get-versions@master
+      users: actionstoolbox/container-framework-actions/composites/get-versions
       with:
         os: 'centos'
     - name: Get debian versions
       id: debian
-      users: actionstoolbox/container-framework-actions/composites/get-versions@master
+      users: actionstoolbox/container-framework-actions/composites/get-versions
       with:
         os: 'debian'
