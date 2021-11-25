@@ -22,5 +22,9 @@ runs:
         else
            dir_path="Dockerfiles/*/"
         fi
-        echo "::set-output name=versions::$(ls -d ${dir_path} | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
+        if [ -d "${dir_path}" ]; then
+          echo "::set-output name=versions::$(ls -d ${dir_path} | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
+        else
+          echo "::set-output name=versions::[]"
+        fi
       shell: bash
