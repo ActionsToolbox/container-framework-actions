@@ -18,6 +18,7 @@ runs:
     - name: Get alpine versions
       id: alpine
       run: echo "::set-output name=versions::$(ls -d Dockerfiles/alpine/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
+      shell: bash
     - name: Get centos versions
       id: centos
       uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
