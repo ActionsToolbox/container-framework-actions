@@ -17,9 +17,10 @@ runs:
     - name: Get versions from directory structure
       id: get-versions
       run: |
-        if [ -n ${{ inputs.os }} ]; then
-          echo "::set-output name=versions::$(ls -d Dockerfiles/${{ inputs.os }}/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
+        if [ -n alpine ]; then
+          dir_path="Dockerfiles/alpine/*/"
         else
-          echo "::set-output name=versions::$(ls -d Dockerfiles/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
+          dir_path="Dockerfiles/*/"
         fi
+        echo "::set-output name=versions::$(ls -d ${dir_path} | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
       shell: bash
