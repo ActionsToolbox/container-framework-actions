@@ -18,11 +18,13 @@ runs:
       id: get-versions
       run: |
         if [ -n ${{ inputs.os }} ]; then
+           test_path="Dockerfiles/${{ inputs.os }}"
            dir_path="Dockerfiles/${{ inputs.os }}/*/"
         else
+           test_path="Dockerfiles"
            dir_path="Dockerfiles/*/"
         fi
-        if [ -d "${dir_name}" ]; then
+        if [ -d "${test_path}" ]; then
           echo "::set-output name=versions::$(ls -d ${dir_path} | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]')"
         else
           echo "::set-output name=versions::[]"
