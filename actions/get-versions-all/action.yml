@@ -5,12 +5,30 @@ outputs:
   alpine-versions:
     description: "Alpine Versions"
     value: ${{steps.alpine.outputs.versions}}
+  amazonlinux-versions:
+    description: "Amazon Linux Versions"
+    value: ${{steps.amazonlinux.outputs.versions}}
+  archlinux-versions:
+    description: "Arch Linux Versions"
+    value: ${{steps.archlinux.outputs.versions}}
   centos-versions:
     description: "Centos Versions"
     value: ${{steps.centos.outputs.versions}}
   debian-versions:
     description: "Debian Versions"
     value: ${{steps.debian.outputs.versions}}
+  oraclelinux-versions:
+    description: "Oracle Linux Versions"
+    value: ${{steps.oraclelinux.outputs.versions}}
+  photon-versions:
+    description: "Photon Linux Versions"
+    value: ${{steps.photon.outputs.versions}}
+  scientificlinux-versions:
+    description: "Scientific Linux Versions"
+    value: ${{steps.scientificlinux.outputs.versions}}
+  ubuntu-versions:
+    description: "Ubuntu Versions"
+    value: ${{steps.ubuntu.outputs.versions}}
 
 runs:
   using: "composite"
@@ -20,6 +38,16 @@ runs:
       uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
       with:
         os: 'alpine'
+    - name: Get amazon linux versions
+      id: amazonlinux
+      uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
+      with:
+        os: 'amazonlinux'
+    - name: Get arch linux versions
+      id: archlinux
+      uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
+      with:
+        os: 'archlinux'
     - name: Get centos versions
       id: centos
       uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
@@ -30,3 +58,23 @@ runs:
       uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
       with:
         os: 'debian'
+    - name: Get oracle linux versions
+      id: oraclelinux
+      uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
+      with:
+        os: 'oraclelinux'
+    - name: Get photon linux versions
+      id: photon
+      uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
+      with:
+        os: 'photon'
+    - name: Get scientific linux versions
+      id: scientificlinux
+      uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
+      with:
+        os: 'scientificlinux'
+    - name: Get ubuntu versions
+      id: ubuntu
+      uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
+      with:
+        os: 'ubuntu'
