@@ -1,0 +1,32 @@
+name: 'Get versions wrapper'
+description: 'Get versions wrapper'
+
+outputs:
+  alpine-versions:
+    description: "Alpine Versions"
+    value: ${{steps.alpine.outputs.versions}}
+  centos-versions:
+    description: "Centos Versions"
+    value: ${{steps.centos.outputs.versions}}
+  debian-versions:
+    description: "Debian Versions"
+    value: ${{steps.debian.outputs.versions}}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Get alpine versions
+      id: alpine
+      users: ActionsToolbox/container-framework-actions/composites/get-versions@master
+        with:
+          os: 'alpine'
+    - name: Get centos versions
+      id: centos
+      users: ActionsToolbox/container-framework-actions/composites/get-versions@master
+        with:
+          os: 'centos'
+    - name: Get debian versions
+      id: debian
+      users: ActionsToolbox/container-framework-actions/composites/get-versions@master
+        with:
+          os: 'debian'
