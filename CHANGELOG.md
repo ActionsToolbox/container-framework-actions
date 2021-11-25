@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- update [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Fix stuff [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- update [`[892f8d8]`](https://github.com/ActionsToolbox/container-framework-actions/commit/892f8d84d44336b28fb7e8a6a8fa03e4071ae019)
 
 - update [`[3f58d99]`](https://github.com/ActionsToolbox/container-framework-actions/commit/3f58d99288a0ea215666b403e7c92c6f3f94b5a7)
 
