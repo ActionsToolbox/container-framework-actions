@@ -16,7 +16,7 @@ runs:
   steps:
     - name: validating inputs
       run: |
-        if [[ -z "${{ inputs.os }} ]]; then
+        if [[ -z "${{ inputs.os }}" ]]; then
           echo "SET"
         else
           echo "UNSET"
