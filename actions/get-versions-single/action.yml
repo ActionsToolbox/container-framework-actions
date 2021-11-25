@@ -22,7 +22,12 @@ runs:
           echo "UNSET"
         fi
       shell: bash
-    - name: Get ${{ inputs.os }} versions
+    - name: Get versions from directory structure
       id: get-versions
-      run: echo "::set-output name=versions::$(ls -d Dockerfiles/${{ inputs.os }}/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
+      run: |
+        if [ -n ${{ inputs.os }} ]; then
+          echo "::set-output name=versions::$(ls -d Dockerfiles/${{ inputs.os }}/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
+        else
+          echo "::set-output name=versions::$(ls -d Dockerfiles/*/ | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]'))"
+        fi
       shell: bash
