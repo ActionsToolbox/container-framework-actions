@@ -13,6 +13,13 @@ on:
       os-name:
         required: true
         type: string
+    secrets:
+      token:
+        required: true
+        type: string
+      slack_webhook_url:
+        required: true
+        type: string
 
 jobs:
   get-versions:
@@ -41,3 +48,16 @@ jobs:
         uses: actions/checkout@v2
       - name: Build Containers
         run: echo "${{ inputs.os-name }} ${{ matrix.version }}"
+  slack-workflow-status:
+    if: always()
+    name: Slack Post Workflow Notification
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack Post Workflow Notification
+        uses: Gamesight/slack-workflow-status@master
+        with:
+          include_jobs: true
+          repo_token: ${{secrets.token}}
+          slack_webhook_url: ${{secrets.slack_webhook_url}}
