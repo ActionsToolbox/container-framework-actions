@@ -65,8 +65,8 @@ jobs:
         if: ${{ inputs.lint }}
         run: echo "Lint"
       - name: Publish Containers to Docker Hub
-        if: ${{ inputs.publish_all }} || ${{ inputs.publish_dh }}
+        if: ${{ inputs.publish_all || inputs.publish_dh }}
         run: echo "Publish Docker Hub"
       - name: Publish Containers to GitHub
-        if: ${{ inputs.publish_all }} || ${{ inputs.publish_gh }}
+        if: ${{ inputs.publish_all || inputs.publish_gh }}
         run: echo "Publish Github"
