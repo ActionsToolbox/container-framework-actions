@@ -10,10 +10,25 @@ on:
       directory:
         required: true
         type: string
-      publish:
+      lint:
+        required: false
+        type: boolean
+        default: true
+      publish_all:
         required: false
         type: boolean
         default: false
+      publish_dh:
+        required: false
+        type: boolean
+        default: false
+      publish_gh:
+        required: false
+        type: boolean
+        default: false
+      ref:
+        required: true
+        type: string
 
 jobs:
   get-versions:
@@ -24,6 +39,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+        with:
+          ref: ${{ inputs.ref }}
       - name: Get version matrix
         id: get-versions
         uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
@@ -35,13 +52,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: ${{fromJson(needs.get-versions.outputs.versions)}}
-    name: Build on ${{ matrix.version }}
+        version: ${{ fromJson(needs.get-versions.outputs.versions) }}
+    name: ${{ matrix.version }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+        with:
+          ref: ${{ inputs.ref }}
       - name: Build Containers
         run: echo "${{ matrix.version }}"
-      - name: Publish Containers
-        if: ${{ inputs.publish }}
-        run: echo "Publish"
+      - name: Lint Continers
+        if: ${{ inputs.lint }}
+        run: echo "Lint"
+      - name: Publish Containers to Docker Hub
+        if: ${{ inputs.publish_all }} || ${{ inputs.publish_dh }}
+        run: echo "Publish Docker Hub"
+      - name: Publish Containers to GitHub
+        if: ${{ inputs.publish_all }} || ${{ inputs.publish_gh }}
+        run: echo "Publish Github"
