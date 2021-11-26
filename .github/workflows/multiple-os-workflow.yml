@@ -10,9 +10,6 @@ on:
       directory:
         required: true
         type: string
-      os-name:
-        required: true
-        type: string
       publish:
         required: false
         type: boolean
@@ -20,14 +17,14 @@ on:
 
 jobs:
   get-versions:
-    name: Get version matrix
+    name: Get versions
     runs-on: ${{ inputs.runs-on }}
     outputs:
       versions: ${{steps.get-versions.outputs.versions}}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Get version matrices
+      - name: Get version matrix
         id: get-versions
         uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
         with:
@@ -39,12 +36,12 @@ jobs:
       fail-fast: false
       matrix:
         version: ${{fromJson(needs.get-versions.outputs.versions)}}
-    name: Build Test on ${{ inputs.os-name }} ${{ matrix.version }}
+    name: Build on ${{ matrix.version }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Build Containers
-        run: echo "${{ inputs.os-name }} ${{ matrix.version }}"
+        run: echo "${{ matrix.version }}"
       - name: Publish Containers
         if: ${{ inputs.publish }}
         run: echo "Publish"
