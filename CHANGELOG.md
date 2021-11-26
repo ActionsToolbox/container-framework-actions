@@ -9,6 +9,8 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 - typo [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
 
+- typo [`[cee71fd]`](https://github.com/ActionsToolbox/container-framework-actions/commit/cee71fd89262a06162ebad115386e9c0e3ad6ee1)
+
 - typo [`[f5ec74c]`](https://github.com/ActionsToolbox/container-framework-actions/commit/f5ec74cb522423c0b75edd68faf94a487f2644b9)
 
 - typo [`[0c31666]`](https://github.com/ActionsToolbox/container-framework-actions/commit/0c316667cb11423751db64ec965dd1d6fd888443)
