@@ -1,4 +1,4 @@
-name: Reusable workflow example
+name: Single OS Workflow
 
 on:
   workflow_call:
@@ -7,12 +7,13 @@ on:
         description: Platform to execute on
         type: string
         default: ubuntu-latest
-      directory:
-        required: true
-        type: string
       os-name:
         required: true
         type: string
+      publish:
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   get-versions:

@@ -1,0 +1,47 @@
+name: Multiple OS Workflow
+
+on:
+  workflow_call:
+    inputs:
+      runs-on:
+        description: Platform to execute on
+        type: string
+        default: ubuntu-latest
+      directory:
+        required: true
+        type: string
+      os-name:
+        required: true
+        type: string
+      publish:
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  get-versions:
+    name: Get version matrix
+    runs-on: ${{ inputs.runs-on }}
+    outputs:
+      versions: ${{steps.get-versions.outputs.versions}}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Get version matrices
+        id: get-versions
+        uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
+        with:
+          os: ${{ inputs.directory }}
+  build:
+    runs-on: ${{ inputs.runs-on }}
+    needs: get-versions
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ${{fromJson(needs.get-versions.outputs.versions)}}
+    name: Build Test on ${{ inputs.os-name }} ${{ matrix.version }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Build Containers
+        run: echo "${{ inputs.os-name }} ${{ matrix.version }}"
