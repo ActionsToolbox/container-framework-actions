@@ -60,11 +60,15 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ inputs.ref }}
-      - name: Build Containers
-        run: echo "${{ matrix.version }}"
-      - name: Lint Continers
+      - name: Set up Docker
+        uses: docker-practice/actions-setup-docker@master
+      - name: Generate Dockerfile
+        run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --generate
+      - name: Run Hadolint
         if: ${{ inputs.lint }}
-        run: echo "Lint"
+        run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/hadolint/master/pipeline.sh)
+      - name: Build Docker Container
+        run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --build --clean
       - name: Publish Containers to Docker Hub
         if: ${{ inputs.publish_all || inputs.publish_dh }}
         run: echo "Publish Docker Hub"
