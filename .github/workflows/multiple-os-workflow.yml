@@ -49,6 +49,7 @@ jobs:
   build:
     runs-on: ${{ inputs.runs-on }}
     needs: get-versions
+    if: ${{ needs.get-versions.outputs.versions != '[]' && needs.get-versions.outputs.versions != '' }}
     strategy:
       fail-fast: false
       matrix:
