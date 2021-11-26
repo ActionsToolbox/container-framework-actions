@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- reusable workflows [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- typo [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- reusable workflows [`[5e688bf]`](https://github.com/ActionsToolbox/container-framework-actions/commit/5e688bf883d2ecf050402cea622bbb0da16c7287)
 
 - Fix stuff [`[125a465]`](https://github.com/ActionsToolbox/container-framework-actions/commit/125a46595650e2691fdafe1f3aa0c3605b51ce9b)
 

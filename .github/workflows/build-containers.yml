@@ -40,4 +40,4 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Build Containers
-        runs: echo "${{ inputs.os-name }} ${{ matrix.version }}"
+        run: echo "${{ inputs.os-name }} ${{ matrix.version }}"
