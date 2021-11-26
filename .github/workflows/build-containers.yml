@@ -16,7 +16,6 @@ on:
 
 jobs:
   get-versions:
-    name: Get os versions
     runs-on: ${{ inputs.runs-on }}
     outputs:
       versions: ${{steps.get-versions.outputs.versions}}
@@ -29,7 +28,7 @@ jobs:
         with:
           os: ${{ inputs.directory }}
   build:
-    runs-on: ${{steps.get-versions.outputs.versions}}
+    runs-on: ${{ inputs.runs-on }}
     needs: get-versions
     strategy:
       fail-fast: false
