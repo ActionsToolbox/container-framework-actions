@@ -45,3 +45,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Build Containers
         run: echo "${{ inputs.os-name }} ${{ matrix.version }}"
+      if: ${{ inputs.publish }}
+      - name: Publish Containers
+        run: echo "Publish"
