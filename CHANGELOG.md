@@ -9,6 +9,8 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 - Fix stuff [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
 
+- Fix stuff [`[5385326]`](https://github.com/ActionsToolbox/container-framework-actions/commit/538532619457be4e778f462a4014e5811b25764b)
+
 - Fix stuff [`[6cd9739]`](https://github.com/ActionsToolbox/container-framework-actions/commit/6cd9739148e583aeb836d3cc693aab4bad13f179)
 
 - Fix stuff [`[23b6439]`](https://github.com/ActionsToolbox/container-framework-actions/commit/23b6439ac1e9e3f972bef57e2d88e9a14b7be696)
