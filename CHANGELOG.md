@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- typo [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Ad docker scan to the flow [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- typo [`[e935870]`](https://github.com/ActionsToolbox/container-framework-actions/commit/e935870f459a79cf39337833b55f6566c1285d8a)
 
 - typo [`[02ec491]`](https://github.com/ActionsToolbox/container-framework-actions/commit/02ec491c9e0b9af81aecd3ae69fd34a332d0e94c)
 

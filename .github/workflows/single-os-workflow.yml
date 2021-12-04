@@ -7,6 +7,7 @@ on:
         description: Platform to execute on
         type: string
         default: ubuntu-latest
+        required: false
       os-name:
         required: true
         type: string

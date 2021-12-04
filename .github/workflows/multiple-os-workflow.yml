@@ -7,6 +7,7 @@ on:
         description: Platform to execute on
         type: string
         default: ubuntu-latest
+        required: false
       directory:
         required: true
         type: string
@@ -29,6 +30,10 @@ on:
       ref:
         required: true
         type: string
+      scan:
+        required: false
+        type: boolean
+        default: true
 
 jobs:
   get-versions:
@@ -69,6 +74,9 @@ jobs:
         run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/hadolint/master/pipeline.sh)
       - name: Build Docker Container
         run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --build --clean
+      - name: Run Docker Scan
+        if: ${{ inputs.scan }}
+        run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --scan
       - name: Publish Containers to Docker Hub
         if: ${{ inputs.publish_all || inputs.publish_dh }}
         run: echo "Publish Docker Hub"
