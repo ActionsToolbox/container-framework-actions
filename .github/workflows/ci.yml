@@ -35,7 +35,7 @@ jobs:
           ruby-version: 3.0
       - name: Run YAML-Lint
         run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/yaml-lint/master/pipeline.sh)
-  slack-workflow-status:
+  slack-message-finish:
     if: always()
     name: Slack Post Workflow Notification
     needs:
@@ -44,9 +44,9 @@ jobs:
       - yaml-lint
     runs-on: ubuntu-latest
     steps:
-      - name: Slack Post Workflow Notification
-        uses: Gamesight/slack-workflow-status@master
+      - name: Slack message
+        uses: come25136/workflow-notification-for-slack@main
         with:
-          include_jobs: true
           repo_token: ${{secrets.GITHUB_TOKEN}}
           slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
+          include_jobs: on-failure

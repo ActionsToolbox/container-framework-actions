@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- Ad docker scan to the flow [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Unify slack messaging [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- Ad docker scan to the flow [`[d04e0f7]`](https://github.com/ActionsToolbox/container-framework-actions/commit/d04e0f7aa97e65e968b10047570f46f6b82496a6)
 
 - typo [`[e935870]`](https://github.com/ActionsToolbox/container-framework-actions/commit/e935870f459a79cf39337833b55f6566c1285d8a)
 
