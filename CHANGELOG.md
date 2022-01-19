@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- Default scan off [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Add SonarCloud [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- Default scan off [`[a52eca1]`](https://github.com/ActionsToolbox/container-framework-actions/commit/a52eca1591ff146f6dac2988a1a29aeb86f42bba)
 
 - Unify slack messaging [`[e6a523b]`](https://github.com/ActionsToolbox/container-framework-actions/commit/e6a523ba7c19c46a2f7d81639907ee503a9386f5)
 
