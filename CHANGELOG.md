@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- Add SonarCloud [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Removed sonarcloud [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- Add SonarCloud [`[65f11fe]`](https://github.com/ActionsToolbox/container-framework-actions/commit/65f11fef8acc49622bef57f40905e6fb0cb05b00)
 
 - Default scan off [`[a52eca1]`](https://github.com/ActionsToolbox/container-framework-actions/commit/a52eca1591ff146f6dac2988a1a29aeb86f42bba)
 
