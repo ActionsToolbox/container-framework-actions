@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- Make field a parameter [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Add limit to workflow [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- Make field a parameter [`[508ac3c]`](https://github.com/ActionsToolbox/container-framework-actions/commit/508ac3c02b6d6a443ebbb8f2f02e49ef83c51a19)
 
 - Add limit to workflow [`[8817369]`](https://github.com/ActionsToolbox/container-framework-actions/commit/8817369d4215e8e39072d4733ed41e965e2693c0)
 
