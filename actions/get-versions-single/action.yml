@@ -18,15 +18,18 @@ runs:
       id: get-versions
       run: |
         if [ -n ${{ inputs.os }} ]; then
-           test_path="Dockerfiles/${{ inputs.os }}"
-           dir_path="Dockerfiles/${{ inputs.os }}/*/"
+            test_path="Dockerfiles/${{ inputs.os }}"
+            dir_path="Dockerfiles/${{ inputs.os }}/*/"
+            field=3
         else
-           test_path="Dockerfiles"
-           dir_path="Dockerfiles/*/"
+            test_path="Dockerfiles"
+            dir_path="Dockerfiles/*/"
+            field=2
         fi
         if [ -d "${test_path}" ]; then
-          echo "::set-output name=versions::$(ls -d ${dir_path} | cut -f3 -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]')"
+            echo "::set-output name=versions::$(ls -d ${dir_path} | cut -f${field} -d'/' | sort -n | jq -cnR '[inputs | select(length>0)]')"
         else
-          echo "::set-output name=versions::[]"
+            echo "::set-output name=versions::[]"
         fi
+
       shell: bash

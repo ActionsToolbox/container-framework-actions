@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- Add limit to workflow [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Make field a parameter [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- Add limit to workflow [`[8817369]`](https://github.com/ActionsToolbox/container-framework-actions/commit/8817369d4215e8e39072d4733ed41e965e2693c0)
 
 - Add alma support and update get-versions-all [`[298cd89]`](https://github.com/ActionsToolbox/container-framework-actions/commit/298cd895af7841226b50289e97e729312a13efac)
 
