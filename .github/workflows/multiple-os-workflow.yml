@@ -40,7 +40,7 @@ on:
         default: false
       max-parallel:
         required: false
-        type: string
+        type: number
         default: 1
 
 jobs:

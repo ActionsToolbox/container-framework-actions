@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- Add limit to workflow [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- fix data type [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- Add limit to workflow [`[5d90f19]`](https://github.com/ActionsToolbox/container-framework-actions/commit/5d90f19ba9dbde9e2cb4fec3ffc2e3d007167d39)
 
 - Add limit to workflow [`[fd9c6f8]`](https://github.com/ActionsToolbox/container-framework-actions/commit/fd9c6f85e2d956464e59ba71fc0c887b7d518561)
 
