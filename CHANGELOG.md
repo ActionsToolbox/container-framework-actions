@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- Add alma support and update get-versions-all [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Add limit to workflow [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- Add alma support and update get-versions-all [`[298cd89]`](https://github.com/ActionsToolbox/container-framework-actions/commit/298cd895af7841226b50289e97e729312a13efac)
 
 - Removed sonarcloud [`[8644852]`](https://github.com/ActionsToolbox/container-framework-actions/commit/8644852e3017253bd568d44d6a0d1ae632843be7)
 

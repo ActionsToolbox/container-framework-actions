@@ -34,6 +34,14 @@ on:
         required: false
         type: boolean
         default: false
+      fail-fast:
+        required: false
+        type: boolean
+        default: false
+      max-parallel
+        required: false
+        type: string
+        default: 2
 
 jobs:
   get-versions:
@@ -56,7 +64,8 @@ jobs:
     needs: get-versions
     if: ${{ needs.get-versions.outputs.versions != '[]' && needs.get-versions.outputs.versions != '' }}
     strategy:
-      fail-fast: false
+      max-parallel: ${{ inputs.max-parallel }}
+      fail-fast: ${{ inputs.fail-fast }}
       matrix:
         version: ${{ fromJson(needs.get-versions.outputs.versions) }}
     name: ${{ matrix.version }}
