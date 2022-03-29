@@ -87,6 +87,9 @@ jobs:
             Templates
             Scripts
             Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}
+      - name Check Changes / Force
+        if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' || inputs.force_build }}
+        run: echo "Changes or Forced"
       - name: Set up Docker
         if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' || inputs.force_build }}
         uses: docker-practice/actions-setup-docker@master
