@@ -89,10 +89,12 @@ jobs:
             Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}
       - name: testing change
         if: steps.changed-files-specific.outputs.any_modified != 'true'
-        run: exit 0
+        run: echo "No change"
       - name: Set up Docker
+        if: steps.changed-files-specific.outputs.any_modified == 'true'
         uses: docker-practice/actions-setup-docker@master
       - name: Generate Dockerfile
+        if: steps.changed-files-specific.outputs.any_modified == 'true'
         run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --generate
       - name: Run Hadolint
         if: ${{ inputs.lint }}
