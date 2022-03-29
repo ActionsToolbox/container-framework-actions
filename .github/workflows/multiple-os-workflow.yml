@@ -82,14 +82,17 @@ jobs:
         id: changed-files-specific
         uses: tj-actions/changed-files@v18.5
         with:
-          files: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}
+          files: |
+            Config
+            Templates
+            Scripts
+            Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}
       - name: testing change
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
-        run: echo "${{ inputs.directory }}/${{ matrix.version }} Changed"
+        if: steps.changed-files-specific.outputs.any_modified != 'true'
+        run: exit 0
       - name: Set up Docker
         uses: docker-practice/actions-setup-docker@master
       - name: Generate Dockerfile
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --generate
       - name: Run Hadolint
         if: ${{ inputs.lint }}
