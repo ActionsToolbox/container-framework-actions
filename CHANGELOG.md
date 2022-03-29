@@ -9,6 +9,8 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 - testing [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
 
+- testing [`[b2e3662]`](https://github.com/ActionsToolbox/container-framework-actions/commit/b2e3662dc63096eda932b32a11b1fe4dd2357145)
+
 - testing [`[eab5a2b]`](https://github.com/ActionsToolbox/container-framework-actions/commit/eab5a2b30092cf449a53b5c27c9d52502239522e)
 
 - testing [`[8716e44]`](https://github.com/ActionsToolbox/container-framework-actions/commit/8716e4427ecd870a0fabf436638bf89ded7bede5)
