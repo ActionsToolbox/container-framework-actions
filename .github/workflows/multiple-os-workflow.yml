@@ -106,5 +106,5 @@ jobs:
         if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' && ( inputs.publish_all || inputs.publish_dh ) }}
         run: echo "Publish Docker Hub"
       - name: Publish Containers to GitHub
-        if: $ {{ steps.changed-files-specific.outputs.any_modified == 'true' && ( inputs.publish_all || inputs.publish_gh ) }}
+        if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' && ( inputs.publish_all || inputs.publish_gh ) }}
         run: echo "Publish Github"
