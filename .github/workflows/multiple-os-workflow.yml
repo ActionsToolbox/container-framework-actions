@@ -88,23 +88,23 @@ jobs:
             Scripts
             Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}
       - name: Set up Docker
-        if: steps.changed-files-specific.outputs.any_modified == 'true'
+        if: ${{ steps.changed-files-specific.outputs.any_modified }}
         uses: docker-practice/actions-setup-docker@master
       - name: Generate Dockerfile
-        if: steps.changed-files-specific.outputs.any_modified == 'true'
+        if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' }}
         run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --generate
       - name: Run Hadolint
-        if: steps.changed-files-specific.outputs.any_modified == 'true' && ${{ inputs.lint }}
+        if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' && inputs.lint }}
         run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/hadolint/master/pipeline.sh)
       - name: Build Docker Container
-        if: steps.changed-files-specific.outputs.any_modified == 'true'
+        if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' }}
         run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --build --clean
       - name: Run Docker Scan
-        if: steps.changed-files-specific.outputs.any_modified == 'true' && ${{ inputs.scan }}
+        if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' && inputs.scan }}
         run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --scan
       - name: Publish Containers to Docker Hub
-        if: steps.changed-files-specific.outputs.any_modified == 'true' && ${{ inputs.publish_all || inputs.publish_dh }}
+        if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' && ( inputs.publish_all || inputs.publish_dh ) }}
         run: echo "Publish Docker Hub"
       - name: Publish Containers to GitHub
-        if: steps.changed-files-specific.outputs.any_modified == 'true' && ${{ inputs.publish_all || inputs.publish_gh }}
+        if: $ {{ steps.changed-files-specific.outputs.any_modified == 'true' && ( inputs.publish_all || inputs.publish_gh ) }}
         run: echo "Publish Github"
