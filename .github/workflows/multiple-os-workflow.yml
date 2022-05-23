@@ -77,6 +77,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
+          fetch-depth: 0
           ref: ${{ inputs.ref }}
       - name: Check for changes
         id: changed-files-specific
