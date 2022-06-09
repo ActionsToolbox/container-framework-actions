@@ -30,10 +30,6 @@ on:
       ref:
         required: true
         type: string
-      scan:
-        required: false
-        type: boolean
-        default: false
       fail-fast:
         required: false
         type: boolean
@@ -100,9 +96,6 @@ jobs:
       - name: Build Docker Container
         if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' || inputs.force-build }}
         run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --build --clean
-      - name: Run Docker Scan
-        if: ${{ ( steps.changed-files-specific.outputs.any_modified == 'true' || inputs.force-build ) && inputs.scan }}
-        run: Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/manage.sh --scan
       - name: Publish Containers to Docker Hub
         if: ${{ ( steps.changed-files-specific.outputs.any_modified == 'true' || inputs.force-build ) && ( inputs.publish_all || inputs.publish_dh ) }}
         run: echo "Publish Docker Hub"
