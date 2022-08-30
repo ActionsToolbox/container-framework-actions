@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- remove scan [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Update matching files code [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- remove scan [`[53e2f69]`](https://github.com/ActionsToolbox/container-framework-actions/commit/53e2f69a815865540309d5f81a086b9a70b5afcf)
 
 - Added missin fetch depth [`[68424c4]`](https://github.com/ActionsToolbox/container-framework-actions/commit/68424c4a28bff0665711e0abdfd7440c8163c85a)
 

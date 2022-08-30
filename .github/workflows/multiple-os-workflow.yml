@@ -77,13 +77,13 @@ jobs:
           ref: ${{ inputs.ref }}
       - name: Check for changes
         id: changed-files-specific
-        uses: tj-actions/changed-files@v18.5
+        uses: tj-actions/changed-files@v29.0.2
         with:
           files: |
-            Config
-            Templates
-            Scripts
-            Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}
+            Config/**
+            Templates/**
+            Scripts/**
+            Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/**
       - name: Set up Docker
         if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' || inputs.force-build }}
         uses: docker-practice/actions-setup-docker@master
