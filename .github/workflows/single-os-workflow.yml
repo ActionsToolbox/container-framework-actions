@@ -24,7 +24,7 @@ jobs:
       versions: ${{steps.get-versions.outputs.versions}}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Get version matrices
         id: get-versions
         uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
@@ -40,6 +40,6 @@ jobs:
     name: Build Test on ${{ inputs.os-name }} ${{ matrix.version }}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Build Containers
         run: echo "${{ inputs.os-name }} ${{ matrix.version }}"
