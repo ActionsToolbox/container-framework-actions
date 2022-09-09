@@ -9,6 +9,8 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 - Update labels and workflows [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
 
+- Update labels and workflows [`[1dafae2]`](https://github.com/ActionsToolbox/container-framework-actions/commit/1dafae2a7ad1fa4e8c141336626a06a893a7136d)
+
 - tweak shared workflows [`[625467f]`](https://github.com/ActionsToolbox/container-framework-actions/commit/625467fcb119f7bbc245a7cf9f98d79f1d051d88)
 
 - Update matching files code [`[2aeebd4]`](https://github.com/ActionsToolbox/container-framework-actions/commit/2aeebd450d162d0581dc6a10a8fb98b547069aae)
