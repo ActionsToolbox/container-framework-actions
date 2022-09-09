@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- Update labels and workflows [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Add stale.yml [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- Update labels and workflows [`[6327de4]`](https://github.com/ActionsToolbox/container-framework-actions/commit/6327de40c4f3496e8ecf94a2000ffbc944d4053d)
 
 - Update labels and workflows [`[1dafae2]`](https://github.com/ActionsToolbox/container-framework-actions/commit/1dafae2a7ad1fa4e8c141336626a06a893a7136d)
 
