@@ -39,7 +39,7 @@ jobs:
         run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/yaml-lint/master/pipeline.sh)
 
   slack-workflow-status:
-    if: always()
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
     name: Slack Post Workflow Notification
     needs:
       - awesomebot
@@ -48,7 +48,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Slack Workflow Notifications
-        if: github.event_name != 'pull_request'
         uses: Gamesight/slack-workflow-status@v1.1.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
