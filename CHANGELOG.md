@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- Fix readme [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- add dependabot-approve-and-auto-merge.yml [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- Fix readme [`[0e9ff3e]`](https://github.com/ActionsToolbox/container-framework-actions/commit/0e9ff3eadd943cc285e60171960c42f34ad97669)
 
 - Add stale.yml [`[fa60264]`](https://github.com/ActionsToolbox/container-framework-actions/commit/fa602645caee5b713ebbe2d8cdd5d1df278a5ab5)
 
