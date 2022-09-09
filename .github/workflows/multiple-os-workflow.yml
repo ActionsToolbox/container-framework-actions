@@ -59,6 +59,7 @@ jobs:
         uses: actionstoolbox/container-framework-actions/actions/get-versions-single@master
         with:
           os: ${{ inputs.directory }}
+
   build:
     runs-on: ${{ inputs.runs-on }}
     needs: get-versions
@@ -84,11 +85,7 @@ jobs:
             Templates/**
             Scripts/**
             Dockerfiles/${{ inputs.directory }}/${{ matrix.version }}/**
-      - name: List all modified files
-        run: |
-          for file in ${{ steps.changed-files-specific.outputs.all_modified_files }}; do
-            echo "$file was modified"
-          done
+
       - name: Set up Docker
         if: ${{ steps.changed-files-specific.outputs.any_modified == 'true' || inputs.force-build }}
         uses: docker-practice/actions-setup-docker@master
