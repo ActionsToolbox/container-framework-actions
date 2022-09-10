@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/ActionsToolbox/container-framework-actions/compare/v0.1.0...HEAD)
 
-- Workflows [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+- Add greetings [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
+
+- Workflows [`[a478ac5]`](https://github.com/ActionsToolbox/container-framework-actions/commit/a478ac50428b2951cc5603535cedf5a56ee7fb81)
 
 - Updates [`[d4f9ee4]`](https://github.com/ActionsToolbox/container-framework-actions/commit/d4f9ee494cba97349ee231b76df613663d6d81af)
 
