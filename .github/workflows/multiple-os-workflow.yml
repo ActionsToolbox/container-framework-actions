@@ -9,36 +9,45 @@ on:
         default: ubuntu-latest
         required: false
       directory:
+        description: To be done
         required: true
         type: string
       lint:
+        description: To be done
         required: false
         type: boolean
         default: true
       publish_all:
+        description: To be done
         required: false
         type: boolean
         default: false
       publish_dh:
+        description: To be done
         required: false
         type: boolean
         default: false
       publish_gh:
+        description: To be done
         required: false
         type: boolean
         default: false
       ref:
+        description: To be done
         required: true
         type: string
       fail-fast:
+        description: To be done
         required: false
         type: boolean
         default: false
       max-parallel:
+        description: To be done
         required: false
         type: number
         default: 1
       force-build:
+        description: To be done
         required: false
         type: boolean
         default: false

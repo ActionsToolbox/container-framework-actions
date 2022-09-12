@@ -9,9 +9,11 @@ on:
         default: ubuntu-latest
         required: false
       os-name:
+        description: What is the OS name?
         required: true
         type: string
       publish:
+        description: Should we publish ?
         required: false
         type: boolean
         default: false

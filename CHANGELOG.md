@@ -9,6 +9,8 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 - switch action lint [`[head]`](https://github.com/ActionsToolbox/container-framework-actions/commit/)
 
+- switch action lint [`[ea7b32d]`](https://github.com/ActionsToolbox/container-framework-actions/commit/ea7b32d8512542aa8c488830ae2516ee9b3da7ed)
+
 - Add action litning [`[08ec3b0]`](https://github.com/ActionsToolbox/container-framework-actions/commit/08ec3b00c5e7f2c93863ae1000faa22de93f03cb)
 
 - Add greetings [`[7225d8e]`](https://github.com/ActionsToolbox/container-framework-actions/commit/7225d8e782fb229a1812e2017b8a0b4b8d673e34)
