@@ -87,7 +87,7 @@ jobs:
           ref: ${{ inputs.ref }}
       - name: Check for changes
         id: changed-files-specific
-        uses: tj-actions/changed-files@v29.0.9
+        uses: tj-actions/changed-files@v35.1.0
         with:
           files: |
             Config/**
