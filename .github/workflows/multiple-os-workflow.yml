@@ -60,7 +60,7 @@ jobs:
       versions: ${{steps.get-versions.outputs.versions}}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ inputs.ref }}
       - name: Get version matrix
@@ -81,7 +81,7 @@ jobs:
     name: ${{ matrix.version }}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ inputs.ref }}
